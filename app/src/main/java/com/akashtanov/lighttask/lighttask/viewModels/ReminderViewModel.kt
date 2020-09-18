@@ -1,0 +1,18 @@
+package com.akashtanov.lighttask.lighttask.viewModels
+
+import androidx.lifecycle.ViewModel
+import com.akashtanov.lighttask.lighttask.db.entities.Reminder
+import com.akashtanov.lighttask.lighttask.db.repositories.ReminderRepository
+
+class ReminderViewModel : ViewModel() {
+    private val repository = ReminderRepository()
+    val allReminders = repository.getAllReminders()
+
+    fun insert(reminder: Reminder) = repository.insert(reminder)
+
+    fun update(reminder: Reminder) = repository.update(reminder)
+
+    fun delete(reminder: Reminder) = repository.delete(reminder)
+
+    fun updateIsOnById(id: Int, isOn: Boolean) = repository.updateIsOnById(id, isOn)
+}

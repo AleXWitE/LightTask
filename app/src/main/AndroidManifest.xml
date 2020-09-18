@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.skushnaryov.lighttask.lighttask">
+
+    <application
+        android:name="com.akashtanov.lighttask.lighttask.LightTask"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name="com.akashtanov.lighttask.lighttask.activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.akashtanov.lighttask.lighttask.activities.AddActivity"
+            android:label="@string/titleActivityAdd" />
+
+        <activity
+            android:name="com.akashtanov.lighttask.lighttask.activities.AboutActivity"
+            android:label="@string/about" />
+
+        <receiver
+            android:name="com.akashtanov.lighttask.lighttask.recievers.TaskReciever"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.skushnaryov.lighttask.TASK" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.akashtanov.lighttask.lighttask.recievers.TaskDoneReciever"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.skushnaryov.lighttask.TASK_DONE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.akashtanov.lighttask.lighttask.recievers.TaskRemindReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.skushnaryov.lighttask.TASK_REMINDER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.akashtanov.lighttask.lighttask.recievers.ReminderReciever"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.skushnaryov.lighttask.REMINDER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.akashtanov.lighttask.lighttask.recievers.ReminderOffReciever"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.skushnaryov.lighttask.REMINDER_OFF" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
